@@ -28,15 +28,15 @@ syn keyword	svStatement	break return continue fork join disable force release as
 syn keyword	svStatement	join_any join_none frokjoin binsof intersect wait wait_order
 
 syn keyword	svLabel		bind constraint covergroup coverpoint
-syn keyword	svLabel		class CLOCK clocking default function generate interface modport 
+syn keyword	svLabel		class CLOCK clocking default function generate interface modport
 syn keyword	svLabel		package program property randseq sequence specify
-syn keyword	svLabel		task 
-syn keyword	svLabel		begin initial module forever import 
-syn keyword	svLabel		end endclass endfunction endgenerate endtask endprogram endmodule 
+syn keyword	svLabel		task
+syn keyword	svLabel		begin initial module forever import
+syn keyword	svLabel		end endclass endfunction endgenerate endtask endprogram endmodule
 syn keyword	svLabel		endinterface endpackage endproperty endclocking endgroup
 
 syn keyword	svConditional	if iff else case casex casez endcase randcase
-syn keyword	svConditional	unique priority randsequence endsequence 
+syn keyword	svConditional	unique priority randsequence endsequence
 syn keyword 	svRepeat	repeat while for do foreach
 syn keyword 	svModifier	after all any around assoc_size async
 syn keyword 	svModifier	before big_endian bit_normal bit_reverse export
@@ -67,7 +67,7 @@ syn keyword 	svType		shortint longint byte
 "syn keyword 	svTask		semaphore_get semaphore_put setstate signal_connect
 "syn keyword 	svTask		sprintf srandom sscanf stop suspend_thread sync
 "syn keyword 	svTask		trace trigger unit_delay unlock_file urand48
-"syn keyword 	svTask		urandom urandom_range 
+"syn keyword 	svTask		urandom urandom_range
 "syn keyword 	svTask		vsv_call_func vsv_call_task vsv_get_conn_err
 "syn keyword 	svTask		vsv_make_client vsv_make_server vsv_up_connections
 "syn keyword 	svTask		vsv_wait_for_done vsv_wait_for_input wait_child wait_var
@@ -106,7 +106,7 @@ syn keyword	svMethods	pre_boundary prematch pre_pack pre_pack pre_randomize
 syn keyword	svMethods	pre-randomize pre_unpack product push_back push_front putc query
 syn keyword	svMethods	query_str rand_mode randomize reserve reverse rsort search
 syn keyword	svMethods	set_at_least set_auto_bin_max set_bin_activiation
-syn keyword	svMethods	set_coverage_goal set_cov_weight set_cross_bin_max 
+syn keyword	svMethods	set_coverage_goal set_cov_weight set_cross_bin_max
 syn keyword	svMethods	shuffle size sort substr sum thismatch tolower toupper unique_index
 syn keyword	svMethods	Wait
 syn keyword	svMethods	num delete exists first last next prev
@@ -240,8 +240,8 @@ syn keyword svConstant	PAST_IT PERCENT POSEDGE PROGRAM RAWIN REGION REPORT
 syn keyword svConstant	SAMPLE SAVE SEMAPHORE SET SILENT STATE stderr
 syn keyword svConstant	stdin stdout STR STR_ERR_OUT_OF_RANGE
 syn keyword svConstant	STR_ERR_REGEXP_SYNTAX SUM TRANS VERBOSE void WAIT
-syn keyword svConstant	__LINE__ __FILE__ __DATE__ __TIME__ 
-syn keyword svConstant	__VERSION__ 
+syn keyword svConstant	__LINE__ __FILE__ __DATE__ __TIME__
+syn keyword svConstant	__VERSION__
 
 syn match   svUserConstant "\<[A-Z][A-Z0-9_]\+\>"
 syn match   svUvmMacro  "`uvm_\w\+"
@@ -372,6 +372,9 @@ if version >= 508 || !exists("did_systemverilog_syn_inits")
 
   delcommand HiLink
 endif
+
+" UVM syntax
+runtime syntax/systemverilog-uvm.vim
 
 let b:current_syntax = "systemverilog"
 
